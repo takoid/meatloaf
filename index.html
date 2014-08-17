@@ -37,15 +37,26 @@ body { padding-top: 75px; }
 #myCarousel .nav {
     background:#eee;
 }
+
+#map_canvas {
+        width: 500px;
+        height: 500px;
+        margin: 20px 20px;
+      }
+
+
+
 </style>
 
+
+ <script src="https://maps.googleapis.com/maps/api/js"></script>
 
 </head>
 
 <body>
-
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -53,14 +64,19 @@ body { padding-top: 75px; }
                     <span class="sr-only">Toggle navigation</span>
 
                 </button>
-                <a class="navbar-brand" href="index.html">Welcome to the Meatloaf Kitchen</a>
+                <a class="navbar-brand" href="index.html">Meatloaf Kitchen Desu ^_^</a>
              <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
 
 
+
+<div class="container">
+
+
     <center>
+
     <!-- Header Carousel -->
     <header id="myCarousel" class="carousel slide">
         <!-- Indicators -->
@@ -85,7 +101,7 @@ We do this with an all-volunteer staff, without a single employee.</p>
         </div><!-- End Item -->
  
          <div class="item">
-          <a href="services.html"><img src="img/meatloaf.png" a href="services.html"></a>
+          <a href="services.html"><img src="img/volunteer.jpg" a href="services.html"></a>
            <div class="carousel-caption">
             <h3>Volunteer</h3>
             <p>University Community Social Services is staffed entirely by volunteers. There would be no soup kitchen without you!</p>
@@ -93,38 +109,87 @@ We do this with an all-volunteer staff, without a single employee.</p>
         </div><!-- End Item -->
         
         <div class="item">
-          <img src="img/meatloaf.png">
+          <img src="img/donate.jpg">
            <div class="carousel-caption">
-            <h3>Headline</h3>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+            <h3>Donate</h3>
+            <p>University Community Social Services is a 501(c)(3) non-profit organization that depends on donations from people like you to continue our work. Despite our name, we are not affiliated with any university, nor are we affiliated with any religious organization. We are all-volunteer run, without a single employee, so 95 cents of every dollar you give goes towards providing meals and services to our guests.</p>
           </div>
         </div><!-- End Item -->
         
         <div class="item">
-          <img src="img/meatloaf.png">
+          <a href="contact.html"><img src="img/contact.jpg"></a>
            <div class="carousel-caption">
-            <h3>Headline</h3>
-            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+            <h3>Contact</h3>
+            <p>Come talk to us about our future plans or ask any question you'd like to ask</p>
           </div>
         </div><!-- End Item -->
                 
       </div><!-- End Carousel Inner -->
  
         <ul class="nav nav-pills nav-justified">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#">About<small>Lorem ipsum dolor sit</small></a></li>
-          <li data-target="#myCarousel" data-slide-to="1"><a href="#">Projects<small>Lorem ipsum dolor sit</small></a></li>
-          <li data-target="#myCarousel" data-slide-to="2"><a href="#">Portfolio<small>Lorem ipsum dolor sit</small></a></li>
-          <li data-target="#myCarousel" data-slide-to="3"><a href="#">Services<small>Lorem ipsum dolor sit</small></a></li>
+          <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#">About<small>Learn more about us.</small></a></li>
+          <li data-target="#myCarousel" data-slide-to="1"><a href="#">Volunteer<small>Get Involved.</small></a></li>
+          <li data-target="#myCarousel" data-slide-to="2"><a href="#">Donate<small>Help us continue helping.</small></a></li>
+          <li data-target="#myCarousel" data-slide-to="3"><a href="#">Contact<small>Ask us anything!</small></a></li>
         </ul>
  
  
     </div><!-- End Carousel -->
     </header>
 </center>
+<hr>
 
+</center>
+        <div class="row">
+          
+                    <div class="col-md-5">
+                        <center><h2>Join us</h2></center>
+                        <p>We serve a wholesome, freshly made meal each Saturday – one that we are happy to eat ourselves – in a respectful atmosphere to anyone who comes through our doors, no questions asked. We provide a welcoming place of respite for our guests and offer vital social services to those in need. We do this with an all-volunteer staff, without a single employee.</p>
+
+                        <br>
+
+                        <h3>Where:</h3>
+                          <small>Cardinal Spellman Center<br>
+                          137 East 2nd Street<br>
+                          Between First Avenue and Avenue A</small>
+
+                          <h3>When:</h3>
+
+                          <li>Every Saturday</li>
+                           <li>Breakfast – 9:30 a.m. to 11:00 a.m.</li>
+                           <li>Join us for pastries, coffee and fruit. </li>
+
+                           <li>Lunch – 1:00 p.m. to 2:30 p.m.</li>
+                           <li>Join us for our delicious meatloaf lunch, served with</li>  
+                            <li>salad, side dish, fresh fruit and dessert!</li>
+                           <li>Vegetarians welcome.</li>
+
+
+                        
+                    </div>
+
+                    <div id="map_canvas"></div>
+                </div>
+              </center>
+
+<hr>
+</div>
 
 
 <script>
+
+   function initialize() {
+        var map_canvas = document.getElementById('map_canvas');
+        var map_options = {
+          center: new google.maps.LatLng(40.723086, -74.986313),
+          zoom: 12,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(map_canvas, map_options)
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+
     $('#myCarousel').carousel({
         interval:   4000
     });
