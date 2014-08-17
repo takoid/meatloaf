@@ -82,7 +82,7 @@ x<!DOCTYPE html>
                     <ul class="list-group">
                         <li class="list-group-item"><strong>Feed 5</strong> People</li>
 
-                        <li class="list-group-item"><a href="#" class="btn btn-primary">Donate!</a>
+                        <li class="list-group-item"><a href="#" id="singlebutton" name="singlebutton" class="btn btn-primary">Donate!</a>
                         </li>
                     </ul>
                 </div>
@@ -99,7 +99,7 @@ x<!DOCTYPE html>
                     <ul class="list-group">
                         <li class="list-group-item"><strong>Feed 50</strong> People</li>
     
-                        <li class="list-group-item"><a href="#" class="btn btn-primary">Donate!</a>
+                        <li class="list-group-item"><a href="#" id="singlebutton" name="singlebutton" class="btn btn-primary">Donate!</a>
                         </li>
                     </ul>
                 </div>
@@ -116,7 +116,7 @@ x<!DOCTYPE html>
                     <ul class="list-group">
                         <li class="list-group-item"><strong>Feed 500</strong> People</li>
 
-                        <li class="list-group-item"><a href="#" class="btn btn-primary">Donate!</a>
+                        <li class="list-group-item"><a href="#" id="singlebutton" name="singlebutton" class="btn btn-primary">Donate!</a>
                         </li>
                     </ul>
                 </div>
@@ -173,6 +173,17 @@ x<!DOCTYPE html>
 
     <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
+
+        <script>
+
+    $("button").click(function() {
+    alert("Thank you, your donation has been sent."); 
+});
+
+    $("singlebutton").click(function() {
+    alert("Thank you, your donation has been sent."); 
+});
+    </script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
