@@ -165,7 +165,7 @@ function get(url){
     var xmlHttp = null;
     xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", url, false);
-    //xmlHttp.send(null);
+    xmlHttp.send(null);
     console.log(xmlHttp)
     alert("Text sent!")
     return xmlHttp.responseText;
