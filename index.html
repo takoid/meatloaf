@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Meatloaf Kitchen</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/modern-business.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+<style>
+
+body { padding-top: 75px; }
+#myCarousel .nav a small {
+    display:block;
+}
+#myCarousel .nav {
+    background:#eee;
+}
+</style>
+
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+
+                </button>
+                <a class="navbar-brand" href="index.html">Welcome to the Meatloaf Kitchen</a>
+             <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <center>
+    <!-- Header Carousel -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+
+
+        <!-- Controls -->
+
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="img/meatloaf.png">
+           <div class="carousel-caption">
+            <h3>About</h3>
+            <p>Description</p>
+          </div>
+        </div><!-- End Item -->
+ 
+         <div class="item">
+          <img src="img/meatloaf.png">
+           <div class="carousel-caption">
+            <h3>Headline</h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+          </div>
+        </div><!-- End Item -->
+        
+        <div class="item">
+          <img src="img/meatloaf.png">
+           <div class="carousel-caption">
+            <h3>Headline</h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+          </div>
+        </div><!-- End Item -->
+        
+        <div class="item">
+          <img src="img/meatloaf.png">
+           <div class="carousel-caption">
+            <h3>Headline</h3>
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+          </div>
+        </div><!-- End Item -->
+                
+      </div><!-- End Carousel Inner -->
+ 
+        <ul class="nav nav-pills nav-justified">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#">About<small>Lorem ipsum dolor sit</small></a></li>
+          <li data-target="#myCarousel" data-slide-to="1"><a href="#">Projects<small>Lorem ipsum dolor sit</small></a></li>
+          <li data-target="#myCarousel" data-slide-to="2"><a href="#">Portfolio<small>Lorem ipsum dolor sit</small></a></li>
+          <li data-target="#myCarousel" data-slide-to="3"><a href="#">Services<small>Lorem ipsum dolor sit</small></a></li>
+        </ul>
+ 
+ 
+    </div><!-- End Carousel -->
+    </header>
+</center>
+
+
+
+<script>
+    $('#myCarousel').carousel({
+        interval:   4000
+    });
+    
+    var clickEvent = false;
+    $('#myCarousel').on('click', '.nav a', function() {
+            clickEvent = true;
+            $('.nav li').removeClass('active');
+            $(this).parent().addClass('active');        
+    }).on('slid.bs.carousel', function(e) {
+        if(!clickEvent) {
+            var count = $('.nav').children().length -1;
+            var current = $('.nav li.active');
+            current.removeClass('active').next().addClass('active');
+            var id = parseInt(current.data('slide-to'));
+            if(count == id) {
+                $('.nav li').first().addClass('active');    
+            }
+        }
+        clickEvent = false;
+    });
+</script>
+
+
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+
+</body>
+
+</html>
