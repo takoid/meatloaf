@@ -84,8 +84,55 @@ We operate a pantry for food staples.
 
 We distribute donated clothing. This past winter, we helped distribute over 600 coats to our guests.
                 </p>
+
+<h1>Get notifications when our meals are ready!</h1>
+<p>Enter your email below to get notified when your meals are ready or when we are ready to serve. Although we server from 9AM, we could have extra and give out more. </p> 
+
+
+
+
+
                 
             </div>
+
+
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Get notified!</legend>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="email">Email</label>
+  <div class="controls">
+    <input id="email" name="email" type="text" placeholder="Your email" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="control-group">
+  <label class="control-label" for="number">Number</label>
+  <div class="controls">
+    <input id="number" name="number" type="text" placeholder="Phone" class="input-xlarge">
+    
+  </div>
+</div>
+
+<!-- Button -->
+<div class="control-group">
+  <label class="control-label" for="buttons"></label>
+  <div class="controls">
+    <button id="buttons" name="buttons" onclick="call();" class="btn btn-primary">Submit</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+
+
         </div>
         <!-- /.row -->
 
@@ -105,6 +152,32 @@ We distribute donated clothing. This past winter, we helped distribute over 600 
         </footer>
 
     </div>
+
+
+<script>
+
+number = "13473238283"
+message = "The Meatloaf Kitchen has a meal ready for you!"
+number = document.getElementById('number') 
+
+url = 'https://datadipity.com/clickslide/girlswhocodesms.json?update&postparam[num]= ' + number + '&postparam[message]=' + message + '&PHPSESSID=gae519f8k5humje0jqb195nob6'
+
+
+function get(url){
+    var xmlHttp = null;
+    xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("GET", url, false);
+    //xmlHttp.send(null);
+    console.log(url)
+    return xmlHttp.responseText;
+}
+
+function call(){
+    console.log(number)
+    get(url);
+}
+</script>
+
     <!-- /.container -->
 
     <!-- jQuery Version 1.11.0 -->
