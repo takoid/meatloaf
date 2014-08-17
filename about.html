@@ -121,15 +121,13 @@ We distribute donated clothing. This past winter, we helped distribute over 600 
 </div>
 
 <!-- Button -->
-<div class="control-group">
-  <label class="control-label" for="buttons"></label>
-  <div class="controls">
-    <button id="buttons" name="buttons" onclick="call();" class="btn btn-primary">Submit</button>
-  </div>
-</div>
+
+    
 
 </fieldset>
 </form>
+
+<submit id="buttons" name="buttons" onclick="call();" class="btn btn-primary">Submit</submit>
 
 
 
@@ -156,11 +154,11 @@ We distribute donated clothing. This past winter, we helped distribute over 600 
 
 <script>
 
-number = "13473238283"
-message = "The Meatloaf Kitchen has a meal ready for you!"
-number = document.getElementById('number') 
+number = '13473238283'
+message = 'MealReady'
+//number = document.getElementById('number') 
 
-url = 'https://datadipity.com/clickslide/girlswhocodesms.json?update&postparam[num]= ' + number + '&postparam[message]=' + message + '&PHPSESSID=gae519f8k5humje0jqb195nob6'
+url = 'https://datadipity.com/clickslide/girlswhocodesms.json?update&postparam[num]=' + number + '&postparam[message]=' + message + '&PHPSESSID=gae519f8k5humje0jqb195nob6'
 
 
 function get(url){
@@ -168,7 +166,8 @@ function get(url){
     xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", url, false);
     //xmlHttp.send(null);
-    console.log(url)
+    console.log(xmlHttp)
+    alert("Text sent!")
     return xmlHttp.responseText;
 }
 
