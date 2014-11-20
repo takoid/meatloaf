@@ -1,6 +1,6 @@
 MeatLoaf   
      
-numaer.github.io/meatloaf  
+numaer.github.io/meatloaf   
 
 ========  
 Rebuilt the website for http://www.meatloafkitchen.org/
